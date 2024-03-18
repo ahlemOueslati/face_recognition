@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Match Found!</h1>
+    <p>The faces match with a confidence score of: {{ match_score }}</p>
+    <a href="/" class="return-link">Return to Home</a>
+</div>
+</body>
+</html>

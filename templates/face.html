@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Capture</title>
+</head>
+<body>
+<h1>Face Recognition - Capture</h1>
+<div>
+  <form action="/capture" method="post">
+    <img src="{{ url_for('video_feed') }}">
+  </form>
+
+
+  <div>
+    <form action="/capture" method="post">
+      <input type="hidden" name="extracted_face_path" value="{{ extracted_face }}">
+      <button type="submit" id="upload-button">Start Scanning</button>
+
+    </form>
+  </div>
+</div>
+</body>
+</html>
