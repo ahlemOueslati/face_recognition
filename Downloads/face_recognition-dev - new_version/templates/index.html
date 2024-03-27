@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>Welcome to Face Recognition App</h1>
+<p>This application verifies your identity by comparing your face with an ID card.</p>
+
+<div id="upload-container">
+    <h3>Scan your ID card</h3>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" id="id-card-upload" name="id-card-upload" accept="image/*" required>
+        <button type="submit" id="upload-button">Extract Face</button>
+    </form>
+</div>
+
+{% if extracted_face %}
+<div id="extracted-face-container">
+    <h3>Extracted Face</h3>
+    <img src="{{ url_for('serve_image', filename='extracted_face.jpg') }}" alt="Extracted Face">
+    <form action="/face" method="get">
+        <input type="hidden" name="extracted_face_path" value="{{ extracted_face }}">
+        <button type="submit" id="continue-button">Scan your face</button>
+    </form>
+</div>
+{% endif %}
+
+</body>
+</html>

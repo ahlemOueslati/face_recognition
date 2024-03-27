@@ -1,0 +1,215 @@
+body {
+  font-family: sans-serif;
+  margin: 2rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#upload-container {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  max-width: 500px; /* Limit container width for responsiveness */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+#upload-button {
+  background-color: #ff9800; /* Orange color for the button */
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#upload-button:hover {
+  opacity: 0.8; /* Slightly lower opacity on hover for visual feedback */
+}
+
+/* continue button style */
+#extracted-face-container {
+  text-align: center; /* Center the button horizontally */
+}
+
+#continue-button {
+  display: inline-block; /* Display the button as an inline block */
+  margin-top: 1rem;
+  background-color: #ff9800; /* Orange color for the button */
+  color: white;
+  padding: 0.5rem 0.75rem; /* Smaller padding for a shorter length */
+  border: none; /* Remove the border for a cleaner look */
+  cursor: pointer;
+  border-radius: 5px; /* Add some border radius for a rounded look */
+}
+
+#continue-button:hover {
+  opacity: 0.8; /* Slightly lower opacity on hover for visual feedback */
+}
+
+/* Styles for the extracted face image */
+#extracted-face-container {
+  text-align: center;
+}
+
+#extracted-face-container img {
+  max-width: 30%; /* Make the image responsive */
+  border: 1px solid #ddd; /* Add a border for visual separation */
+  border-radius: 5px; /* Add some border radius for a rounded look */
+  margin-top: 1rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  #upload-container {
+    max-width: 90%; /* Adjust container width for smaller screens */
+  }
+
+  #upload-button {
+    padding: 0.4rem 0.8rem; /* Adjust button padding for smaller screens */
+  }
+
+  #continue-button {
+    padding: 0.2rem 0.4rem; /* Adjust button padding for smaller screens */
+  }
+
+  #extracted-face-container img {
+    max-width: 80%; /* Adjust image width for smaller screens */
+  }
+}
+
+/* Styles for match.html and no_match.html */
+.container {
+  max-width: 500px; /* Limit container width for responsiveness */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 1rem; /* Add padding for content spacing */
+  text-align: center; /* Center the text */
+}
+
+h1 {
+  margin-bottom: 1rem; /* Add some space below the heading */
+}
+
+p {
+  margin-bottom: 1rem; /* Add some space below the paragraphs */
+}
+
+.return-link {
+  display: block; /* Display the link as a block element */
+  margin-top: 1rem; /* Add some space above the link */
+  background-color: #ff9800; /* Orange color for the button */
+  color: white;
+  padding: 0.5rem 1rem; /* Add padding to the button */
+  border: none; /* Remove the border */
+  cursor: pointer;
+  border-radius: 5px; /* Add some border radius for a rounded look */
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.return-link:hover {
+  opacity: 0.8; /* Slightly lower opacity on hover for visual feedback */
+}
+
+/* New form style */
+form {
+  max-width: 400px;
+  margin: 0 auto; /* Center the form horizontally */
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="submit"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Restyled gender form and payment details */
+/* Gender form */
+.input-group.gender {
+  margin-bottom: 1rem;
+}
+
+.input-group.gender label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.input-group.gender input[type="radio"] {
+  display: none;
+}
+
+.input-group.gender label {
+  display: inline-block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.input-group.gender label:hover {
+  text-decoration: underline;
+}
+
+.input-group.gender input[type="radio"]:checked + label {
+  color: #ff9800;
+}
+
+/* Payment details */
+.input-group.payment-method {
+  margin-bottom: 1rem;
+}
+
+.input-group.payment-method label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.input-group.payment-method input[type="radio"] {
+  display: none;
+}
+
+.input-group.payment-method label {
+  display: inline-block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.input-group.payment-method label:hover {
+  text-decoration: underline;
+}
+
+.input-group.payment-method input[type="radio"]:checked + label {
+  color: #ff9800;
+}
+

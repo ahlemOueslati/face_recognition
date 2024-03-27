@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <title>Extract Information</title>
+</head>
+<body>
+<h1>Extracted Information</h1>
+<p>Information extracted from the ID card.</p>
+
+
+  <form action="/submit_information" method="post">
+    <label for="numero">Numéro:</label>
+    <input type="tel" id="numero" name="numero" value="{{parsed_data.numero}}" disabled><br>
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom" name="nom" value="{{parsed_data.nom}}" disabled><br>
+    <label for="prenom">Prénom:</label>
+    <input type="text" id="prenom" name="prenom" value="{{parsed_data.prenom}}" disabled><br>
+    <label for="date_de_naissance">Date de Naissance:</label>
+    <input type="text" id="date_de_naissance" name="date_de_naissance" value="{{parsed_data.date_de_naissance}}"  disabled><br>
+    <label for="adresse">Adresse:</label>
+    <input type="text" id="adresse" name="adresse"  required><br>
+    <label for="ville">Ville:</label>
+    <input type="text" id="ville" name="ville"  required><br>
+    <label for="postal_code">Code postale:</label>
+    <input type="text" id="postal_code" name="postal_code"  required><br>
+    <div class="row">
+      <div class="col-half">
+        <h4>Gender</h4>
+        <div class="input-group">
+          <input id="gender-male" type="radio" name="gender" value="male">
+          <label for="gender-male">Male</label>
+          <input id="gender-female" type="radio" name="gender" value="female">
+          <label for="gender-female">Female</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h4>Payment Details</h4>
+      <div class="input-group">
+        <input id="payment-method-card" type="radio" name="payment-method" value="card" checked>
+        <label for="payment-method-card"><span><i class="fa fa-cc-visa"></i></span> Credit Card</label>
+        <input id="payment-method-paypal" type="radio" name="payment-method" value="paypal">
+        <label for="payment-method-paypal"><span><i class="fa fa-cc-paypal"></i></span> Paypal</label>
+      </div>
+      <div class="input-group input-group-icon">
+        <input type="text" name="card-number" placeholder="Card Number">
+        <div class="input-icon"><i class="fa fa-credit-card"></i></div>
+      </div>
+      <div class="col-half">
+        <div class="input-group input-group-icon">
+          <input type="text" name="card-cvc" placeholder="Card CVC">
+          <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+      </div>
+      <div class="col-half">
+        <div class="input-group">
+          <select>
+            <option>01 Jan</option>
+            <option>02 Jan</option>
+          </select>
+          <select>
+            <option>2015</option>
+            <option>2016</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h4>Terms and Conditions</h4>
+      <div class="input-group">
+        <input id="terms" type="checkbox" name="terms">
+        <label for="terms">I accept the terms and conditions for signing up to this service, and hereby confirm I have read the privacy policy.</label>
+      </div>
+    </div>
+    <div class="row">
+      <button type="submit" id="upload-button">Submit</button>
+    </div>
+  </form>
+
+
+</body>
+</html>
