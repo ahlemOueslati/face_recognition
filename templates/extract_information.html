@@ -2,13 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <title>Extract Information</title>
 </head>
 <body>
 <h1>Extracted Information</h1>
 <p>Information extracted from the ID card.</p>
-<!-- Add your extracted information here -->
+
+
+<form  action="/congrats" method="post">
+  <label for="numero">Numéro:</label>
+  <input type="tel" id="numero" name="numero" value="{{parsed_data.id_number}}" disabled><br>
+  <input type="hidden" id="hidden_numero" name="hidden_numero" value="{{ parsed_data.id_number }}">
+  <label for="nom">Nom:</label>
+  <input type="text" id="nom" name="nom" value="{{parsed_data.last_name}}" disabled><br>
+  <input type="hidden" id="hidden_nom" name="hidden_nom" value="{{ parsed_data.last_name }}">
+  <label for="prenom">Prénom:</label>
+  <input type="text" id="prenom" name="prenom" value="{{parsed_data.first_name}}" disabled><br>
+  <input type="hidden" id="hidden_prenom" name="hidden_prenom" value="{{ parsed_data.first_name }}">
+  <label for="date_de_naissance">Date de Naissance:</label>
+  <input type="text" id="date_de_naissance" name="date_de_naissance" value="{{parsed_data.date_of_birth}}"  disabled><br>
+  <label for="adresse">Adresse:</label>
+  <input type="text" id="adresse" name="adresse"  required><br>
+  <label for="ville">Ville:</label>
+  <input type="text" id="ville" name="ville"  required><br>
+  <label for="postal_code">Code postale:</label>
+  <input type="text" id="postal_code" name="postal_code"  required><br>
+  <div class="row">
+    <div class="col-half">
+      <h4>Gender</h4>
+      <div class="input-group">
+        <input id="gender-male" type="radio" name="gender" value="male">
+        <label for="gender-male">Male</label>
+        <input id="gender-female" type="radio" name="gender" value="female">
+        <label for="gender-female">Female</label>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <div class="row">
+    <h4>Terms and Conditions</h4>
+    <div class="input-group">
+      <input id="terms" type="checkbox" name="terms">
+      <label for="terms">I accept the terms and conditions for signing up to this service, and hereby confirm I have read the privacy policy.</label>
+    </div>
+  </div>
+  <div class="row">
+    <button type="button" id="modify-button" onclick="enableFields()">Modify</button>
+    <button type="submit" id="upload-button">Confirm</button>
+  </div>
+</form>
+
+<script>
+    function enableFields() {
+      document.getElementById('nom').disabled = false;
+      document.getElementById('prenom').disabled = false;
+      document.getElementById('date_de_naissance').disabled = false;
+      document.getElementById('adresse').disabled = false;
+      document.getElementById('ville').disabled = false;
+      document.getElementById('postal_code').disabled = false;
+      document.getElementById('gender-male').disabled = false;
+      document.getElementById('gender-female').disabled = false;
+      document.getElementById('terms').disabled = false;
+    }
+  </script>
+
 </body>
 </html>

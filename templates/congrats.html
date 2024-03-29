@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_cong.css') }}">
+    <title>Congratulations</title>
+</head>
+<body>
+<div class="js-container container" style="top:0px !important;">  <h1>Congratulations   {{ first_name }} !</h1></div>
+<form id="hidden-form" style="text-align: center;" action="/invoice" method="post">
+    <input type="hidden" id="hidden_numero" name="hidden_numero" value="{{id_number}}" >
+    <input type="hidden" id="hidden_nom" name="hidden_nom" value="{{last_name}}" >
+    <input type="hidden" id="hidden_prenom" name="hidden_prenom" value="{{ first_name }}">
+    <input type="hidden" id="hidden_adresse" name="hidden_adresse" value="{{address}}"  >
+    <input type="hidden" id="hidden_ville" name="hidden_ville" value="{{city}}"   >
+    <input type="hidden" id="hidden_postal_code" name="hidden_postal_code"  value="{{postal_code}}"  >
+    <button type="submit" id="upload-button">Download invoice</button>
+</form>
+
+<script  src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+</html>

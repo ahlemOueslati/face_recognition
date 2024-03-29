@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<form action="/" method="POST" enctype="multipart/form-data">
+    <input type="file" id="id-card-upload" name="id-card-upload" accept="image/*" required>
+    <button type="submit" id="upload-button">Extract Face</button>
+</form>
+</body>
+</html>
