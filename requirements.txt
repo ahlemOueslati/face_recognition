@@ -20,8 +20,8 @@ Flask==2.2.2
 Flask-Reuploaded==1.2.0
 Flask-WTF==1.0.1
 flet==0.21.2
-flet-core==0.21.1
-flet-runtime==0.21.1
+flet-core==0.21.2
+flet-runtime==0.21.2
 fonttools==4.38.0
 fsspec==2024.3.0
 gunicorn==21.2.0
