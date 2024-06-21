@@ -25,7 +25,7 @@ device=None
 model=None
 
 processor=None
-token = "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"
+token = "hello"
 image=None
 
 def load_model_and_tokenizer(strategy, model_path="google/paligemma-3b-mix-224"):
